@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import Routes from '../routes';
 import SignIn from '../views/SignIn';
 
 function Initialize() {
@@ -23,7 +24,7 @@ function Initialize() {
     <div>
       {user ? (
         <>
-          <h1>HELLO USER</h1>
+          <Routes uid={user.uid} />
         </>
       ) : (
         <SignIn user={user} />
