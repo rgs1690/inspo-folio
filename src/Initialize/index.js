@@ -3,6 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import Routes from '../routes';
 import SignIn from '../views/SignIn';
+import NavBar from '../components/NavBar';
 
 function Initialize() {
   const [user, setUser] = useState(null);
@@ -24,6 +25,7 @@ function Initialize() {
     <div>
       {user ? (
         <>
+          <NavBar />
           <Routes uid={user.uid} />
         </>
       ) : (
