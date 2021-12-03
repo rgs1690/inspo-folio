@@ -26,7 +26,7 @@ function Initialize() {
       {user ? (
         <>
           <NavBar />
-          <Routes uid={user.uid} />
+          <Routes />
         </>
       ) : (
         <SignIn user={user} />

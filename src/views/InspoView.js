@@ -29,7 +29,7 @@ export default function InspoView() {
           ))}
         </>
       ) : (
-        'Add your Inspos'
+        'Add your art to add inspos'
       )}
     </div>
   );
