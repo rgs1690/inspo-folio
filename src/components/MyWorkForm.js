@@ -36,9 +36,9 @@ export default function MyWorkForm({ obj = {} }) {
       [e.target.name]: e.target.value,
     }));
   };
-  // const resetForm = () => {
-  // setFormInput(initialState);
-  // };
+  const resetForm = () => {
+    setFormInput(initialState);
+  };
   const handleClick = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
@@ -51,6 +51,7 @@ export default function MyWorkForm({ obj = {} }) {
         uid: currentUid,
         dateAdded: new Date(),
       }).then((newObj) => {
+        resetForm();
         history.push(`/newInspo/${newObj.firebaseKey}`);
       });
     }
