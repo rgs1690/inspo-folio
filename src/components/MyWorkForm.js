@@ -45,7 +45,7 @@ export default function MyWorkForm({ obj = {} }) {
         history.push('/');
       });
     } else {
-      createMyWork({ ...formInput, currentUid, dateAdded: new Date() });
+      createMyWork({ ...formInput, uid: currentUid, dateAdded: new Date() });
       resetForm();
       history.push('/');
     }
@@ -53,18 +53,18 @@ export default function MyWorkForm({ obj = {} }) {
   return (
     <div>
       <Form onSubmit={handleClick}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="artTitle">
           <Form.Label>Title</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter title"
             value={formInput.artTitle || ''}
             onChange={(e) => handleChange(e)}
-            name="artTitile"
+            name="artTitle"
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="artSize">
           <Form.Label> Size</Form.Label>
           <Form.Control
             type="text"
@@ -74,7 +74,7 @@ export default function MyWorkForm({ obj = {} }) {
             name="artSize"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="artUrl">
           <Form.Label>Image URL</Form.Label>
           <Form.Control
             type="url"
@@ -84,7 +84,7 @@ export default function MyWorkForm({ obj = {} }) {
             name="artUrl"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="artMedium">
           <Form.Label>Medium</Form.Label>
           <Form.Control
             type="text"
