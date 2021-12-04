@@ -66,9 +66,15 @@ export default function InspoForm({ obj = {} }) {
     }
   };
   const handleAddAnotherInspo = () => {
-    // create inspo
-    resetForm();
+    createInspo({
+      ...formInput,
+      uid: currentUid,
+      myWorkId: firebaseKey,
+    }).then(() => {
+      resetForm();
+    });
   };
+
   return (
     <div>
       <h1>INSPO FORM</h1>
