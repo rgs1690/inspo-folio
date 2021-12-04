@@ -101,7 +101,7 @@ export default function MyWorkForm({ obj = {} }) {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Add Inspos
+          {obj.firebaseKey ? 'Update' : 'Add Inspos'}
         </Button>
       </Form>
     </div>

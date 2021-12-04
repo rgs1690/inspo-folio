@@ -65,6 +65,10 @@ export default function InspoForm({ obj = {} }) {
       });
     }
   };
+  const handleAddAnotherInspo = () => {
+    // create inspo
+    resetForm();
+  };
   return (
     <div>
       <h1>INSPO FORM</h1>
@@ -122,6 +126,9 @@ export default function InspoForm({ obj = {} }) {
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
+        </Button>
+        <Button variant="primary" type="button" onClick={handleAddAnotherInspo}>
+          Add Another Inspo
         </Button>
       </Form>
     </div>
