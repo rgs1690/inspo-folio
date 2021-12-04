@@ -12,7 +12,7 @@ const getAllInspos = (uid) => new Promise((resolve, reject) => {
 
 const createInspo = (inspoObj) => new Promise((resolve, reject) => {
   axios
-    .post(`${baseURL}/myWork.json`, inspoObj)
+    .post(`${baseURL}/inspos.json`, inspoObj)
     .then((response) => {
       const firebaseKey = response.data.name;
       axios

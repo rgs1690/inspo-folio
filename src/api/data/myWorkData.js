@@ -17,9 +17,7 @@ const createMyWork = (myWorkObj) => new Promise((resolve, reject) => {
       const firebaseKey = response.data.name;
       axios
         .patch(`${baseURL}/myWork/${firebaseKey}.json`, { firebaseKey })
-        .then(() => {
-          getAllMyWorks(myWorkObj.uid).then(resolve);
-        });
+        .then(() => resolve(firebaseKey));
     })
     .catch(reject);
 });

@@ -50,9 +50,9 @@ export default function MyWorkForm({ obj = {} }) {
         ...formInput,
         uid: currentUid,
         dateAdded: new Date(),
-      }).then((newObj) => {
+      }).then((firebaseKey) => {
         resetForm();
-        history.push(`/newInspo/${newObj.firebaseKey}`);
+        history.push(`/newInspo/${firebaseKey}`);
       });
     }
   };

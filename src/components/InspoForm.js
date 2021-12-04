@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 import { createInspo, updateInspo } from '../api/data/InspoData';
-import { getSingleMyWork } from '../api/data/myWorkData';
+// import { getSingleMyWork } from '../api/data/myWorkData';
 
 const initialState = {
   artMedium: '',
@@ -18,12 +18,12 @@ export default function InspoForm({ obj = {} }) {
   const history = useHistory();
   const currentUid = getCurrentUsersUid();
   const [formInput, setFormInput] = useState(initialState);
-  const [myWork, setMyWork] = useState({});
+  //   const [myWork, setMyWork] = useState({});
   const { firebaseKey } = useParams();
-  useEffect(() => {
-    getSingleMyWork(firebaseKey).then(setMyWork);
-    console.warn(myWork);
-  }, []);
+  //   useEffect(() => {
+  //     getSingleMyWork(firebaseKey).then(setMyWork);
+  //     console.warn(myWork);
+  //   }, []);
   useEffect(() => {
     if (obj.firebaseKey) {
       setFormInput({
