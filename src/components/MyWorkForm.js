@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 import { createMyWork, updateMyWork } from '../api/data/myWorkData';
+// import InspoForm from './InspoForm';
 
 const initialState = {
   artMedium: '',
@@ -35,9 +36,9 @@ export default function MyWorkForm({ obj = {} }) {
       [e.target.name]: e.target.value,
     }));
   };
-  const resetForm = () => {
-    setFormInput(initialState);
-  };
+  // const resetForm = () => {
+  // setFormInput(initialState);
+  // };
   const handleClick = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
@@ -49,9 +50,8 @@ export default function MyWorkForm({ obj = {} }) {
         ...formInput,
         uid: currentUid,
         dateAdded: new Date(),
-      }).then(() => {
-        resetForm();
-        history.push('/');
+      }).then((newObj) => {
+        history.push(`/newInspo/${newObj.firebaseKey}`);
       });
     }
   };
@@ -100,7 +100,7 @@ export default function MyWorkForm({ obj = {} }) {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Add Inspos
         </Button>
       </Form>
     </div>

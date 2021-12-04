@@ -29,10 +29,7 @@ export default function Routes() {
         <Route exact path="/newArt">
           <MyWorkForm />
         </Route>
-        <Route exact path="/newInspo">
-          {' '}
-          <InspoForm />
-        </Route>
+        <Route exact path="/newInspo/:firebaseKey" component={InspoForm} />
         <Route exact path="/editArt/:firebaseKey" component={EditMyWorkView} />
         <Route exact path="/editInspo/:firebaseKey" component={EditInspoView} />
       </Switch>
