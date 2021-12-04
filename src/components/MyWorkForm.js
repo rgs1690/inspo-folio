@@ -45,9 +45,14 @@ export default function MyWorkForm({ obj = {} }) {
         history.push('/');
       });
     } else {
-      createMyWork({ ...formInput, uid: currentUid, dateAdded: new Date() });
-      resetForm();
-      history.push('/');
+      createMyWork({
+        ...formInput,
+        uid: currentUid,
+        dateAdded: new Date(),
+      }).then(() => {
+        resetForm();
+        history.push('/');
+      });
     }
   };
   return (
