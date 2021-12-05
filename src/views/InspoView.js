@@ -24,7 +24,7 @@ export default function InspoView() {
             <InspoCard
               key={inspo.firebaseKey}
               inspo={inspo}
-              setinspos={inspos}
+              setInspos={setInspos}
             />
           ))}
         </>
