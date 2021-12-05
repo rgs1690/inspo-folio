@@ -25,7 +25,7 @@ export default function InspoForm({ obj = {} }) {
       setFormInput({
         artMedium: obj.artMedium,
         artSize: obj.artSize,
-        inspoTitle: obj.artTitle,
+        inspoTitle: obj.inspoTitle,
         inspoArtist: obj.inspoArtist,
         artUrl: obj.artUrl,
         uid: obj.uid,
@@ -150,7 +150,7 @@ export default function InspoForm({ obj = {} }) {
           />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          {obj.firebaseKey ? 'Update' : 'Add Inspos'}
         </Button>
         <Button variant="primary" type="button" onClick={handleAddAnotherInspo}>
           Add Another Inspo

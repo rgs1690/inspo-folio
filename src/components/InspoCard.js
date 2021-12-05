@@ -21,7 +21,9 @@ export default function InspoCard({ inspo, setInspos }) {
           >
             View Details
           </Link>
-          <Button variant="info">Update</Button>
+          <Link to={`/editInspo/${inspo.firebaseKey}`} className="btn btn-info">
+            Update
+          </Link>
           <Button variant="danger">Delete</Button>
         </Card.Body>
       </Card>
