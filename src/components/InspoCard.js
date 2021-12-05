@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
 export default function InspoCard({ inspo, setInspos }) {
@@ -14,7 +15,12 @@ export default function InspoCard({ inspo, setInspos }) {
             {inspo.artMedium}
             {inspo.artSize}
           </Card.Text>
-          <Button variant="primary">View Details</Button>
+          <Link
+            to={`/inspoDetails/${inspo.firebaseKey}`}
+            className="btn btn-primary"
+          >
+            View Details
+          </Link>
           <Button variant="info">Update</Button>
           <Button variant="danger">Delete</Button>
         </Card.Body>
