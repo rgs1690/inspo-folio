@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
+import getCurrentUsersUid from '../helpers/getCurrentUserUID';
+import { deleteInspo } from '../api/data/InspoData';
 
 export default function InspoCard({ inspo, setInspos }) {
-  console.warn(setInspos);
+  const currentUID = getCurrentUsersUid();
+  const handleClick = () => {
+    deleteInspo(inspo.firebaseKey, currentUID).then((newArray) => setInspos(newArray));
+  };
   return (
     <div>
       <Card style={{ width: '18rem' }}>
@@ -14,9 +20,18 @@ export default function InspoCard({ inspo, setInspos }) {
             {inspo.artMedium}
             {inspo.artSize}
           </Card.Text>
-          <Button variant="primary">View Details</Button>
-          <Button variant="info">Update</Button>
-          <Button variant="danger">Delete</Button>
+          <Link
+            to={`/inspoDetails/${inspo.firebaseKey}`}
+            className="btn btn-primary"
+          >
+            View Details
+          </Link>
+          <Link to={`/editInspo/${inspo.firebaseKey}`} className="btn btn-info">
+            Update
+          </Link>
+          <Button type="button" onClick={() => handleClick()} variant="danger">
+            Delete
+          </Button>
         </Card.Body>
       </Card>
     </div>

@@ -4,7 +4,6 @@ import { Form, Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 import { createInspo, updateInspo } from '../api/data/InspoData';
-// import { getSingleMyWork } from '../api/data/myWorkData';
 
 const initialState = {
   artMedium: '',
@@ -13,27 +12,26 @@ const initialState = {
   inspoTitle: '',
   yearCompleted: '',
   uid: '',
+  inspoDescription: '',
+  inspoArtist: '',
 };
 export default function InspoForm({ obj = {} }) {
   const history = useHistory();
   const currentUid = getCurrentUsersUid();
   const [formInput, setFormInput] = useState(initialState);
-  //   const [myWork, setMyWork] = useState({});
   const { firebaseKey } = useParams();
-  //   useEffect(() => {
-  //     getSingleMyWork(firebaseKey).then(setMyWork);
-  //     console.warn(myWork);
-  //   }, []);
   useEffect(() => {
     if (obj.firebaseKey) {
       setFormInput({
         artMedium: obj.artMedium,
         artSize: obj.artSize,
-        inspoTitle: obj.artTitle,
+        inspoTitle: obj.inspoTitle,
+        inspoArtist: obj.inspoArtist,
         artUrl: obj.artUrl,
         uid: obj.uid,
         firebaseKey: obj.firebaseKey,
         yearCompleted: obj.yearCompleted,
+        inspoDescription: obj.inspoDescription,
       });
     }
   }, [obj]);
@@ -89,7 +87,16 @@ export default function InspoForm({ obj = {} }) {
             name="inspoTitle"
           />
         </Form.Group>
-
+        <Form.Group className="mb-3" controlId="inspoArtist">
+          <Form.Label>Artist Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Enter artist"
+            value={formInput.inspoArtist || ''}
+            onChange={(e) => handleChange(e)}
+            name="inspoArtist"
+          />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="artSize">
           <Form.Label> Size</Form.Label>
           <Form.Control
@@ -130,8 +137,20 @@ export default function InspoForm({ obj = {} }) {
             name="yearCompleted"
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="inspoDescription">
+          <Form.Label>
+            Please explain how this work inspired your art
+          </Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="why did this art inspire you?"
+            value={formInput.inspoDescription || ''}
+            onChange={(e) => handleChange(e)}
+            name="inspoDescription"
+          />
+        </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          {obj.firebaseKey ? 'Update' : 'Add Inspos'}
         </Button>
         <Button variant="primary" type="button" onClick={handleAddAnotherInspo}>
           Add Another Inspo
@@ -142,6 +161,5 @@ export default function InspoForm({ obj = {} }) {
 }
 InspoForm.propTypes = {
   obj: PropTypes.shape({}),
-  //   myWork: PropTypes.string.isRequired,
 };
 InspoForm.defaultProps = { obj: {} };
