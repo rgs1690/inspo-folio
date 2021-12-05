@@ -42,10 +42,21 @@ const deleteMyWork = (firebaseKey, uid) => new Promise((resolve, reject) => {
     .then(() => getAllMyWorks(uid).then(resolve))
     .catch(reject);
 });
+const getMyWorkByFirebaseKey = (uid, firebaseKey) => new Promise((resolve, reject) => {
+  getAllMyWorks(uid)
+    .then((myWorkArray) => {
+      const filteredMyWork = myWorkArray.filter(
+        (myWork) => myWork.firebaseKey === firebaseKey,
+      );
+      resolve(filteredMyWork);
+    })
+    .catch(reject);
+});
 export {
   getAllMyWorks,
   createMyWork,
   getSingleMyWork,
   updateMyWork,
   deleteMyWork,
+  getMyWorkByFirebaseKey,
 };
