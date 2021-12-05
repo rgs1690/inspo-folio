@@ -44,11 +44,12 @@ const deleteInspo = (firebaseKey, uid) => new Promise((resolve, reject) => {
     .then(() => getAllInspos(uid).then(resolve))
     .catch(reject);
 });
-
-const getInspoByMyWorkId = (uid) => new Promise((resolve, reject) => {
+const getInspoByMyWorkId = (uid, myWorkId) => new Promise((resolve, reject) => {
   getAllInspos(uid)
     .then((inspoArray) => {
-      const myWorkInspos = inspoArray.filter((inspo) => inspo.myWorkId);
+      const myWorkInspos = inspoArray.filter(
+        (inspo) => inspo.myWorkId === myWorkId,
+      );
       resolve(myWorkInspos);
     })
     .catch(reject);
