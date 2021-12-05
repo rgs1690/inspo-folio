@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 
-export default function InspoCard({ inspo }) {
+export default function InspoCard({ inspo, setInspos }) {
+  console.warn(setInspos);
   return (
     <div>
       <Card style={{ width: '18rem' }}>
@@ -32,4 +33,5 @@ InspoCard.propTypes = {
     uid: PropTypes.string,
     yearCompleted: PropTypes.string,
   }).isRequired,
+  setInspos: PropTypes.func.isRequired,
 };

@@ -20,7 +20,12 @@ export default function MyWorkCard({ myWork, setMyWorks }) {
             {myWork.artMedium}
             {myWork.artSize}
           </Card.Text>
-          <Button variant="primary">View Details</Button>
+          <Link
+            to={`/myWorkDetails/${myWork.firebaseKey}`}
+            className="btn btn-primary"
+          >
+            View Details
+          </Link>
           <Link to={`/editArt/${myWork.firebaseKey}`} className="btn btn-info">
             Update
           </Link>
