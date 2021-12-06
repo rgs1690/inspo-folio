@@ -14,7 +14,7 @@ export default function InspoDetailsView() {
     getSingleInspo(firebaseKey).then(setInspo);
     const myWorkKey = inspo.myWorkId;
     getSingleMyWork(myWorkKey).then(setMyWork);
-  }, []);
+  }, [myWork]);
   const handleClick = () => {
     deleteMyWork(myWork.firebaseKey, currentUid).then((newArray) => setMyWork(newArray));
   };
