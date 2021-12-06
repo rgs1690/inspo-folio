@@ -11,18 +11,10 @@ export default function InspoDetailsView() {
   const { firebaseKey } = useParams();
   const currentUid = getCurrentUsersUid();
   useEffect(() => {
-    let isMounted = true;
-    getSingleInspo(firebaseKey).then((inspoObj) => {
-      if (isMounted) setInspo(inspoObj);
-    });
-    const key = inspo.myWorkId;
-    getSingleMyWork(key).then((myWorkObj) => {
-      if (isMounted) setMyWork(myWorkObj);
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+    getSingleInspo(firebaseKey).then(setInspo);
+    const myWorkKey = inspo.myWorkId;
+    getSingleMyWork(myWorkKey).then(setMyWork);
+  }, [myWork]);
   const handleClick = () => {
     deleteMyWork(myWork.firebaseKey, currentUid).then((newArray) => setMyWork(newArray));
   };
