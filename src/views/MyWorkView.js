@@ -4,7 +4,11 @@ import { useHistory } from 'react-router-dom';
 import { getAllMyWorks } from '../api/data/myWorkData';
 import MyWorkCard from '../components/MyWorkCard';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
-import { orderMyWorkByTitle } from '../helpers/sortHelpers';
+import {
+  orderMyWorkByTitle,
+  orderMyWorkByOld,
+  orderMyWorkByNew,
+} from '../helpers/sortHelpers';
 
 export default function MyWorkView() {
   const currentUid = getCurrentUsersUid();
@@ -25,6 +29,10 @@ export default function MyWorkView() {
       history.push('/newArt');
     } else if (method === 'sortTitle') {
       orderMyWorkByTitle(myWorks);
+    } else if (method === 'sortOld') {
+      orderMyWorkByOld(myWorks);
+    } else if (method === 'sortNew') {
+      orderMyWorkByNew(myWorks);
     }
   };
   return (
@@ -45,16 +53,23 @@ export default function MyWorkView() {
         <Dropdown.Menu>
           <Dropdown.Item
             href="#/action-1"
-            id="sortTitle"
             type="button"
             onClick={() => handleClick('sortTitle')}
           >
             Sort by Title
           </Dropdown.Item>
-          <Dropdown.Item href="#/action-2" id="sortOld">
+          <Dropdown.Item
+            href="#/action-2"
+            type="button"
+            onClick={() => handleClick('sortOld')}
+          >
             Sort by Oldest
           </Dropdown.Item>
-          <Dropdown.Item href="#/action-3" id="sortNew">
+          <Dropdown.Item
+            href="#/action-3"
+            type="button"
+            onClick={() => handleClick('sortNew')}
+          >
             Sort by Newest
           </Dropdown.Item>
         </Dropdown.Menu>

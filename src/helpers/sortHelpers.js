@@ -25,21 +25,24 @@ const orderInsposByTitle = (array) => {
   });
 };
 
-const orderByNew = (array) => {
+const orderMyWorkByNew = (array) => {
   array.sort((a, b) => {
-    const cardOne = new Date(a.timeSubmitted);
-    const cardTwo = new Date(b.timeSubmitted);
+    const cardOne = new Date(a.dateAdded);
+    const cardTwo = new Date(b.dateAdded);
     return cardTwo - cardOne;
   });
 };
-const orderByOld = (array) => {
+const orderMyWorkByOld = (array) => {
   array.sort((a, b) => {
-    const cardOne = new Date(a.timeSubmitted);
-    const cardTwo = new Date(b.timeSubmitted);
+    const cardOne = new Date(a.dateAdded);
+    const cardTwo = new Date(b.dateAdded);
     return cardOne - cardTwo;
   });
 };
 
 export {
-  orderMyWorkByTitle, orderByNew, orderByOld, orderInsposByTitle,
+  orderMyWorkByTitle,
+  orderMyWorkByNew,
+  orderMyWorkByOld,
+  orderInsposByTitle,
 };
