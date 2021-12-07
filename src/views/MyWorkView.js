@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { getAllMyWorks } from '../api/data/myWorkData';
 import MyWorkCard from '../components/MyWorkCard';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
+import { orderMyWorkByTitle } from '../helpers/sortHelpers';
 
 export default function MyWorkView() {
   const currentUid = getCurrentUsersUid();
@@ -22,6 +23,8 @@ export default function MyWorkView() {
   const handleClick = (method) => {
     if (method === 'add') {
       history.push('/newArt');
+    } else if (method === 'sortTitle') {
+      orderMyWorkByTitle(myWorks);
     }
   };
   return (
@@ -34,6 +37,28 @@ export default function MyWorkView() {
       >
         ADD YOUR ART
       </Button>
+      <Dropdown>
+        <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+          Sort Artworks
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item
+            href="#/action-1"
+            id="sortTitle"
+            type="button"
+            onClick={() => handleClick('sortTitle')}
+          >
+            Sort by Title
+          </Dropdown.Item>
+          <Dropdown.Item href="#/action-2" id="sortOld">
+            Sort by Oldest
+          </Dropdown.Item>
+          <Dropdown.Item href="#/action-3" id="sortNew">
+            Sort by Newest
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
       {myWorks ? (
         <>
           {myWorks.map((myWork) => (
