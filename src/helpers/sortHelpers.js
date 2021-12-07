@@ -32,10 +32,24 @@ const orderMyWorkByNew = (array) => {
     return cardTwo - cardOne;
   });
 };
+const orderInspoByNew = (array) => {
+  array.sort((a, b) => {
+    const cardOne = a.yearCompleted;
+    const cardTwo = b.yearCompleted;
+    return cardTwo - cardOne;
+  });
+};
 const orderMyWorkByOld = (array) => {
   array.sort((a, b) => {
     const cardOne = new Date(a.dateAdded);
     const cardTwo = new Date(b.dateAdded);
+    return cardOne - cardTwo;
+  });
+};
+const orderInspoByOld = (array) => {
+  array.sort((a, b) => {
+    const cardOne = a.yearCompleted;
+    const cardTwo = b.yearCompleted;
     return cardOne - cardTwo;
   });
 };
@@ -45,4 +59,6 @@ export {
   orderMyWorkByNew,
   orderMyWorkByOld,
   orderInsposByTitle,
+  orderInspoByNew,
+  orderInspoByOld,
 };
