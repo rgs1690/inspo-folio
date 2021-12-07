@@ -14,7 +14,6 @@ function Initialize() {
           uid: authed.uid,
         };
         setUser(userInfoObj);
-        console.warn(userInfoObj.uid);
       } else if (user || user === null) {
         setUser(false);
       }

@@ -18,9 +18,7 @@ export default function MyWorkDetailsView() {
     let isMounted = true;
     if (isMounted) {
       getSingleMyWork(firebaseKey).then(setMyWork);
-      console.warn(myWork);
       getInspoByMyWorkId(currentUid, firebaseKey).then(setInspos);
-      console.warn(inspos);
     }
     return () => {
       isMounted = false;
