@@ -11,6 +11,19 @@ const orderMyWorkByTitle = (array) => {
     return 0;
   });
 };
+const orderInsposByTitle = (array) => {
+  array.sort((a, b) => {
+    const cardOne = a.inspoTitle.toLowerCase();
+    const cardTwo = b.inspoTitle.toLowerCase();
+    if (cardOne < cardTwo) {
+      return -1;
+    }
+    if (cardTwo > cardOne) {
+      return 1;
+    }
+    return 0;
+  });
+};
 
 const orderByNew = (array) => {
   array.sort((a, b) => {
@@ -27,4 +40,6 @@ const orderByOld = (array) => {
   });
 };
 
-export { orderMyWorkByTitle, orderByNew, orderByOld };
+export {
+  orderMyWorkByTitle, orderByNew, orderByOld, orderInsposByTitle,
+};
