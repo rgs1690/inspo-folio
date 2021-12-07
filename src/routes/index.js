@@ -9,6 +9,8 @@ import MyWorkForm from '../components/MyWorkForm';
 import InspoForm from '../components/InspoForm';
 import EditMyWorkView from '../views/EditMyWorkView';
 import EditInspoView from '../views/EditInspoView';
+import SearchMyWork from '../views/SearchMyWork';
+import SearchInspos from '../views/SearchInspos';
 
 export default function Routes() {
   return (
@@ -32,6 +34,8 @@ export default function Routes() {
         <Route exact path="/newInspo/:firebaseKey" component={InspoForm} />
         <Route exact path="/editArt/:firebaseKey" component={EditMyWorkView} />
         <Route exact path="/editInspo/:firebaseKey" component={EditInspoView} />
+        <Route exact path="/searchArt" component={SearchMyWork} />
+        <Route exact path="/searchInspos" component={SearchInspos} />
       </Switch>
     </div>
   );
