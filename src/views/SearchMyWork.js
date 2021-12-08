@@ -8,7 +8,7 @@ const getSearchItems = (searchItem, myWorks) => {
   if (!searchItem) {
     return myWorks;
   }
-  return myWorks.filter((myWork) => myWork.artTitle.toLowerCase().includes(searchItem));
+  return myWorks.filter((myWork) => myWork.artTitle.toUpperCase().includes(searchItem.toUpperCase()));
 };
 export default function SearchMyWork() {
   const currentUid = getCurrentUsersUid();
