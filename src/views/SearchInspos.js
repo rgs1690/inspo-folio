@@ -8,7 +8,7 @@ const getSearchItems = (searchItem, inspos) => {
   if (!searchItem) {
     return inspos;
   }
-  return inspos.filter((inspo) => inspo.inspoTitle.toLowerCase().includes(searchItem));
+  return inspos.filter((inspo) => inspo.inspoTitle.toUpperCase().includes(searchItem.toUpperCase()));
 };
 export default function SearchInspos() {
   const currentUid = getCurrentUsersUid();
