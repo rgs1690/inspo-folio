@@ -17,6 +17,17 @@ const CardStyle = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 3em;
+  }
+  .ButtonDropFlex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+  }
+  Button {
+    margin-right: 3em;
   }
 `;
 export default function MyWorkView() {
@@ -46,44 +57,47 @@ export default function MyWorkView() {
   };
   return (
     <div>
-      <Button
-        type="button"
-        variant="secondary"
-        size="lg"
-        onClick={() => handleClick('add')}
-      >
-        ADD YOUR ART
-      </Button>
-      <Dropdown>
-        <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-          Sort Artworks
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item
-            href="#/action-1"
-            type="button"
-            onClick={() => handleClick('sortTitle')}
-          >
-            Sort by Title
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#/action-2"
-            type="button"
-            onClick={() => handleClick('sortOld')}
-          >
-            Sort by Oldest
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#/action-3"
-            type="button"
-            onClick={() => handleClick('sortNew')}
-          >
-            Sort by Newest
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
       <CardStyle>
+        <div className="ButtonDropFlex">
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={() => handleClick('add')}
+          >
+            ADD YOUR ART
+          </Button>
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+              Sort Artworks
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item
+                href="#/action-1"
+                type="button"
+                onClick={() => handleClick('sortTitle')}
+              >
+                Sort by Title
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-2"
+                type="button"
+                onClick={() => handleClick('sortOld')}
+              >
+                Sort by Oldest
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-3"
+                type="button"
+                onClick={() => handleClick('sortNew')}
+              >
+                Sort by Newest
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+
         <div className="flexContainer">
           {myWorks ? (
             <>

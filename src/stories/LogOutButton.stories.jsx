@@ -8,10 +8,6 @@ export default {
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const LogOutButton = (args) => <LogOutButtonComp {...args} />;
-// eslint-disable-next-line react/jsx-props-no-spreading
-// const Template = (args) => <LogOutButton {...args} />;
-
-// export const Red = Template.bind({});
 
 LogOutButton.args = {
   label: 'LOG ME OUT',
