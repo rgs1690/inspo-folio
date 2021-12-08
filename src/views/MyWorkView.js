@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { Button, Dropdown } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { getAllMyWorks } from '../api/data/myWorkData';
@@ -10,6 +11,14 @@ import {
   orderMyWorkByNew,
 } from '../helpers/sortHelpers';
 
+const CardStyle = styled.div`
+  .flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+`;
 export default function MyWorkView() {
   const currentUid = getCurrentUsersUid();
   const [myWorks, setMyWorks] = useState([]);
@@ -74,19 +83,23 @@ export default function MyWorkView() {
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      {myWorks ? (
-        <>
-          {myWorks.map((myWork) => (
-            <MyWorkCard
-              key={myWork.firebaseKey}
-              myWork={myWork}
-              setMyWorks={setMyWorks}
-            />
-          ))}
-        </>
-      ) : (
-        'Add your Work'
-      )}
+      <CardStyle>
+        <div className="flexContainer">
+          {myWorks ? (
+            <>
+              {myWorks.map((myWork) => (
+                <MyWorkCard
+                  key={myWork.firebaseKey}
+                  myWork={myWork}
+                  setMyWorks={setMyWorks}
+                />
+              ))}
+            </>
+          ) : (
+            'Add your Work'
+          )}
+        </div>
+      </CardStyle>
     </div>
   );
 }
