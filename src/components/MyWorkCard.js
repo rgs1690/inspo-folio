@@ -5,29 +5,14 @@ import { Card, Button } from 'react-bootstrap';
 import { deleteMyWork } from '../api/data/myWorkData';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
-export default function MyWorkCard({
-  myWork,
-  setMyWorks,
-  border,
-  backgroundColor = 'blue',
-  size = 'md',
-}) {
-  let scale = 1;
-  if (size === 'sm') scale = 5;
-  if (size === 'md') scale = 10;
-  if (size === 'lg') scale = 2.5;
-  const style = {
-    backgroundColor,
-    width: `${scale * 2}rem`,
-    border,
-  };
+export default function MyWorkCard({ myWork, setMyWorks }) {
   const currentUID = getCurrentUsersUid();
   const handleClick = () => {
     deleteMyWork(myWork.firebaseKey, currentUID).then((newArray) => setMyWorks(newArray));
   };
   return (
     <div>
-      <Card style={style}>
+      <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={myWork.artUrl} />
         <Card.Body>
           <Card.Title>{myWork.artTitle}</Card.Title>
@@ -63,12 +48,4 @@ MyWorkCard.propTypes = {
     uid: PropTypes.string,
   }).isRequired,
   setMyWorks: PropTypes.func.isRequired,
-  border: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
-};
-MyWorkCard.defaultProps = {
-  border: '',
-  backgroundColor: '',
-  size: 'md',
 };
