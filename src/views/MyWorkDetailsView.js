@@ -30,10 +30,13 @@ export default function MyWorkDetailsView() {
   };
   useEffect(() => {
     let isMounted = true;
-    if (isMounted) {
-      getSingleMyWork(firebaseKey).then(setMyWork);
-      getInspoByMyWorkId(currentUid, firebaseKey).then(setInspos);
-    }
+    getSingleMyWork(firebaseKey).then((myWorkArray) => {
+      if (isMounted) setMyWork(myWorkArray);
+    });
+    getInspoByMyWorkId(currentUid, firebaseKey).then((inspoArray) => {
+      if (isMounted) setInspos(inspoArray);
+    });
+
     return () => {
       isMounted = false;
     };
