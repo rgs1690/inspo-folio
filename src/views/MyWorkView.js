@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { Button, Dropdown } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { getAllMyWorks } from '../api/data/myWorkData';
@@ -10,6 +11,25 @@ import {
   orderMyWorkByNew,
 } from '../helpers/sortHelpers';
 
+const CardStyle = styled.div`
+  .flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 3em;
+  }
+  .ButtonDropFlex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1em;
+  }
+  Button {
+    margin-right: 3em;
+  }
+`;
 export default function MyWorkView() {
   const currentUid = getCurrentUsersUid();
   const [myWorks, setMyWorks] = useState([]);
@@ -37,56 +57,63 @@ export default function MyWorkView() {
   };
   return (
     <div>
-      <Button
-        type="button"
-        variant="secondary"
-        size="lg"
-        onClick={() => handleClick('add')}
-      >
-        ADD YOUR ART
-      </Button>
-      <Dropdown>
-        <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-          Sort Artworks
-        </Dropdown.Toggle>
+      <CardStyle>
+        <div className="ButtonDropFlex">
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={() => handleClick('add')}
+          >
+            ADD YOUR ART
+          </Button>
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+              Sort Artworks
+            </Dropdown.Toggle>
 
-        <Dropdown.Menu>
-          <Dropdown.Item
-            href="#/action-1"
-            type="button"
-            onClick={() => handleClick('sortTitle')}
-          >
-            Sort by Title
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#/action-2"
-            type="button"
-            onClick={() => handleClick('sortOld')}
-          >
-            Sort by Oldest
-          </Dropdown.Item>
-          <Dropdown.Item
-            href="#/action-3"
-            type="button"
-            onClick={() => handleClick('sortNew')}
-          >
-            Sort by Newest
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      {myWorks ? (
-        <>
-          {myWorks.map((myWork) => (
-            <MyWorkCard
-              key={myWork.firebaseKey}
-              myWork={myWork}
-              setMyWorks={setMyWorks}
-            />
-          ))}
-        </>
-      ) : (
-        'Add your Work'
-      )}
+            <Dropdown.Menu>
+              <Dropdown.Item
+                href="#/action-1"
+                type="button"
+                onClick={() => handleClick('sortTitle')}
+              >
+                Sort by Title
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-2"
+                type="button"
+                onClick={() => handleClick('sortOld')}
+              >
+                Sort by Oldest
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-3"
+                type="button"
+                onClick={() => handleClick('sortNew')}
+              >
+                Sort by Newest
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+
+        <div className="flexContainer">
+          {myWorks ? (
+            <>
+              {myWorks.map((myWork) => (
+                <MyWorkCard
+                  key={myWork.firebaseKey}
+                  myWork={myWork}
+                  setMyWorks={setMyWorks}
+                />
+              ))}
+            </>
+          ) : (
+            'Add your Work'
+          )}
+        </div>
+      </CardStyle>
     </div>
   );
 }

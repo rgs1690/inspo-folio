@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown } from 'react-bootstrap';
+import styled from 'styled-components';
 import { getAllInspos } from '../api/data/InspoData';
 import InspoCard from '../components/InspoCard';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
@@ -9,6 +10,21 @@ import {
   orderInsposByTitle,
 } from '../helpers/sortHelpers';
 
+const InspoStyle = styled.div`
+  .flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 3em;
+  }
+  .dropStyle {
+    display: block;
+    margin: 0 auto;
+    width: 10em;
+    margin-top: 1em;
+  }
+`;
 export default function InspoView() {
   const currentUid = getCurrentUsersUid();
   const [inspos, setInspos] = useState([]);
@@ -32,51 +48,55 @@ export default function InspoView() {
     }
   };
   return (
-    <div>
+    <InspoStyle>
       <div>
-        <Dropdown>
-          <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-            Sort Inspos
-          </Dropdown.Toggle>
+        <div className="dropStyle">
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+              Sort Inspos
+            </Dropdown.Toggle>
 
-          <Dropdown.Menu>
-            <Dropdown.Item
-              href="#/action-1"
-              type="button"
-              onClick={() => handleClick('sortTitle')}
-            >
-              Sort by Title
-            </Dropdown.Item>
-            <Dropdown.Item
-              href="#/action-2"
-              type="button"
-              onClick={() => handleClick('sortOld')}
-            >
-              Sort by Oldest
-            </Dropdown.Item>
-            <Dropdown.Item
-              href="#/action-3"
-              type="button"
-              onClick={() => handleClick('sortNew')}
-            >
-              Sort by Newest
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+            <Dropdown.Menu>
+              <Dropdown.Item
+                href="#/action-1"
+                type="button"
+                onClick={() => handleClick('sortTitle')}
+              >
+                Sort by Title
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-2"
+                type="button"
+                onClick={() => handleClick('sortOld')}
+              >
+                Sort by Oldest
+              </Dropdown.Item>
+              <Dropdown.Item
+                href="#/action-3"
+                type="button"
+                onClick={() => handleClick('sortNew')}
+              >
+                Sort by Newest
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+        <div className="flexContainer">
+          {inspos ? (
+            <>
+              {inspos.map((inspo) => (
+                <InspoCard
+                  key={inspo.firebaseKey}
+                  inspo={inspo}
+                  setInspos={setInspos}
+                />
+              ))}
+            </>
+          ) : (
+            'Add your art to add inspos'
+          )}
+        </div>
       </div>
-      {inspos ? (
-        <>
-          {inspos.map((inspo) => (
-            <InspoCard
-              key={inspo.firebaseKey}
-              inspo={inspo}
-              setInspos={setInspos}
-            />
-          ))}
-        </>
-      ) : (
-        'Add your art to add inspos'
-      )}
-    </div>
+    </InspoStyle>
   );
 }
