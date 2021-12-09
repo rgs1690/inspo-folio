@@ -15,7 +15,7 @@ export default function MyWorkCard({
   let scale = 1;
   if (size === 'sm') scale = 5;
   if (size === 'md') scale = 10;
-  if (size === 'lg') scale = 15;
+  if (size === 'lg') scale = 2.5;
   const style = {
     backgroundColor,
     width: `${scale * 2}rem`,
