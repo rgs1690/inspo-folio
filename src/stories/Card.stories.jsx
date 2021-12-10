@@ -2,7 +2,7 @@ import React from 'react';
 import CardsComp from '../components/componentsForStories/Card';
 
 export default {
-  title: 'Card',
+  title: 'Cards',
   component: CardsComp,
 };
 

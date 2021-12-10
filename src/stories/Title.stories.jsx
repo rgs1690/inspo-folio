@@ -2,7 +2,7 @@ import React from 'react';
 import TitleComp from '../components/componentsForStories/Title';
 
 export default {
-  title: 'Title',
+  title: 'Titles',
   component: TitleComp,
 };
 

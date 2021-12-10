@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonComp from '../components/componentsForStories/Button';
 
 export default {
-  title: 'Log Out Button',
+  title: 'Buttons',
   component: ButtonComp,
 };
 
