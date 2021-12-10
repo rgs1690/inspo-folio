@@ -8,3 +8,5 @@ export default {
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const NavBar = (args) => <NavBarComp {...args} />;
+
+NavBar.args = {};
