@@ -17,7 +17,7 @@ export default function MyWorkCard({ myWork, setMyWorks }) {
         <Card.Body>
           <Card.Title>{myWork.artTitle}</Card.Title>
           <Card.Text>
-            {myWork.artMedium}
+            {myWork.artMedium} <br />
             {myWork.artSize}
           </Card.Text>
           <Link

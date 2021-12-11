@@ -8,21 +8,31 @@ import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
 const DetailsStyle = styled.div`
   display: relative;
-
+  text-align: center;
   .absoluteContainer {
     position: absolute;
     top: 5em;
-    left: 60em;
+    left: 66em;
   }
   .myWork {
     margin-top: 2em;
   }
 
   .card {
-    width: 15em;
+    width: 40em;
+    margin-left: 2em;
   }
   .cardImage {
-    width: 15em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .inspoDescrip {
+    margin: 1em;
+    font-size: 5em;
+  }
+  h1 {
+    margin-top: 10em;
   }
 `;
 export default function InspoDetailsView() {
@@ -50,29 +60,72 @@ export default function InspoDetailsView() {
   return (
     <DetailsStyle>
       <div>
-        <div>
-          <div className="myWork">
-            {myWork ? (
+        <div className="cardContainer">
+          <div>
+            <div className="myWork">
+              {myWork ? (
+                <Card className="card">
+                  <Card.Img
+                    className="cardImage"
+                    variant="top"
+                    src={myWork.artUrl}
+                  />
+                  <Card.Body>
+                    <Card.Title>{myWork.artTitle}</Card.Title>
+                    <Card.Text>
+                      {myWork.artMedium} <br />
+                      {myWork.artSize}
+                    </Card.Text>
+                    <Link
+                      to={`/myWorkDetails/${myWork.firebaseKey}`}
+                      className="btn btn-primary"
+                    >
+                      View Details
+                    </Link>
+                    <Link
+                      to={`/editArt/${myWork.firebaseKey}`}
+                      className="btn btn-info"
+                    >
+                      Update
+                    </Link>
+                    <Button
+                      type="button"
+                      onClick={() => handleClick()}
+                      variant="danger"
+                    >
+                      Delete
+                    </Button>
+                  </Card.Body>
+                </Card>
+              ) : (
+                ''
+              )}
+            </div>
+          </div>
+
+          <div>
+            <div className="absoluteContainer">
               <Card className="card">
                 <Card.Img
                   className="cardImage"
                   variant="top"
-                  src={myWork.artUrl}
+                  src={inspo.artUrl}
                 />
                 <Card.Body>
-                  <Card.Title>{myWork.artTitle}</Card.Title>
+                  <Card.Title>{inspo.inspoTitle}</Card.Title>
+                  <Card.Title>{inspo.inspoArtist}</Card.Title>
                   <Card.Text>
-                    {myWork.artMedium}
-                    {myWork.artSize}
+                    {inspo.artMedium} <br />
+                    {inspo.artSize}
                   </Card.Text>
                   <Link
-                    to={`/myWorkDetails/${myWork.firebaseKey}`}
+                    to={`/inspoDetails/${inspo.firebaseKey}`}
                     className="btn btn-primary"
                   >
                     View Details
                   </Link>
                   <Link
-                    to={`/editArt/${myWork.firebaseKey}`}
+                    to={`/editInspo/${inspo.firebaseKey}`}
                     className="btn btn-info"
                   >
                     Update
@@ -86,52 +139,14 @@ export default function InspoDetailsView() {
                   </Button>
                 </Card.Body>
               </Card>
-            ) : (
-              ''
-            )}
+            </div>
           </div>
-        </div>
-
-        <div>
-          <div className="absoluteContainer">
-            <Card className="card">
-              <Card.Img
-                className="cardImage"
-                variant="top"
-                src={inspo.artUrl}
-              />
-              <Card.Body>
-                <Card.Title>{inspo.inspoTitle}</Card.Title>
-                <Card.Title>{inspo.inspoArtist}</Card.Title>
-                <Card.Text>
-                  {inspo.artMedium}
-                  {inspo.artSize}
-                </Card.Text>
-                <Link
-                  to={`/inspoDetails/${inspo.firebaseKey}`}
-                  className="btn btn-primary"
-                >
-                  View Details
-                </Link>
-                <Link
-                  to={`/editInspo/${inspo.firebaseKey}`}
-                  className="btn btn-info"
-                >
-                  Update
-                </Link>
-                <Button
-                  type="button"
-                  onClick={() => handleClick()}
-                  variant="danger"
-                >
-                  Delete
-                </Button>
-              </Card.Body>
-            </Card>
+          <div>
+            <h1>Why I was inspired: </h1>
           </div>
-        </div>
-        <div>
-          <p>{inspo.inspoDescription}</p>
+          <div>
+            <p className="inspoDescrip">{inspo.inspoDescription}</p>
+          </div>
         </div>
       </div>
     </DetailsStyle>

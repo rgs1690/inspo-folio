@@ -4,7 +4,7 @@ import { Form, FormControl, Button } from 'react-bootstrap';
 export default function SearchBar() {
   return (
     <div>
-      <div className="formStyle">
+      <div>
         <Form className="d-flex">
           <FormControl
             type="text"

@@ -16,8 +16,9 @@ export default function InspoCard({ inspo, setInspos }) {
         <Card.Img variant="top" src={inspo.artUrl} />
         <Card.Body>
           <Card.Title>{inspo.inspoTitle}</Card.Title>
+          <Card.Title>{inspo.inspoArtist}</Card.Title>
           <Card.Text>
-            {inspo.artMedium}
+            {inspo.artMedium} <br />
             {inspo.artSize}
           </Card.Text>
           <Link
@@ -47,6 +48,7 @@ InspoCard.propTypes = {
     firebaseKey: PropTypes.string,
     uid: PropTypes.string,
     yearCompleted: PropTypes.string,
+    inspoArtist: PropTypes.string,
   }).isRequired,
   setInspos: PropTypes.func.isRequired,
 };
