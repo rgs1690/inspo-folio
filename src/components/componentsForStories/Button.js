@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { signOutUser } from '../../api/auth';
-// import { signOutUser } from '../../api/auth';
 
-export default function LogOutButton({
+export default function Button({
   label,
   backgroundColor = 'red',
   size = 'md',
   func,
+  color,
+  border,
 }) {
   let scale = 1;
   if (size === 'sm') scale = 0.75;
@@ -15,7 +15,8 @@ export default function LogOutButton({
   const style = {
     backgroundColor,
     padding: `${scale * 0.5}rem ${scale * 1}rem`,
-    border: 'none',
+    border,
+    color,
   };
 
   return (
@@ -26,15 +27,19 @@ export default function LogOutButton({
     </div>
   );
 }
-LogOutButton.propTypes = {
+Button.propTypes = {
   label: PropTypes.string,
   backgroundColor: PropTypes.string,
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   func: PropTypes.func,
+  color: PropTypes.string,
+  border: PropTypes.string,
 };
-LogOutButton.defaultProps = {
+Button.defaultProps = {
   label: '',
   backgroundColor: '',
   size: 'sm',
   func: () => console.warn('signOut'),
+  color: '',
+  border: '',
 };

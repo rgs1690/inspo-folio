@@ -1,10 +1,12 @@
 import React from 'react';
-import NavBarComp from '../components/NavBar';
+import NavigationComp from '../components/componentsForStories/Navigation';
 
 export default {
   title: 'Nav Bar',
-  component: NavBarComp,
+  component: NavigationComp,
 };
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-export const NavBar = (args) => <NavBarComp {...args} />;
+export const NavBar = (args) => <NavigationComp {...args} />;
+
+NavBar.args = {};

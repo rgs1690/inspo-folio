@@ -9,6 +9,7 @@ import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
 const DetailsStyle = styled.div`
 display: relative;
+margin: 1em;
 .absoluteContainer {
   position: absolute;
   top: 5em;
@@ -46,12 +47,12 @@ export default function MyWorkDetailsView() {
       <div>
         <DetailsStyle>
           <div>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '40rem' }}>
               <Card.Img variant="top" src={myWork.artUrl} />
               <Card.Body>
                 <Card.Title>{myWork.artTitle}</Card.Title>
                 <Card.Text>
-                  {myWork.artMedium}
+                  {myWork.artMedium} <br />
                   {myWork.artSize}
                 </Card.Text>
                 <Link
