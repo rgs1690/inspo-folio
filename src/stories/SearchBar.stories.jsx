@@ -9,4 +9,9 @@ export default {
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const SearchBar = (args) => <SearchBarComp {...args} />;
 
-SearchBar.args = {};
+SearchBar.args = {
+  width: '100px',
+  border: 'solid 1px black',
+  btnBackground: '',
+  color: '',
+};

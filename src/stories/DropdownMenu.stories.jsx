@@ -9,4 +9,8 @@ export default {
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const Dropdown = (args) => <DropdownMenuComp {...args} />;
 
-Dropdown.args = {};
+Dropdown.args = {
+  backgroundColor: '',
+  color: '',
+  func: () => console.warn('BUTTON CLICKED'),
+};
