@@ -10,7 +10,8 @@ export default {
 export const Dropdown = (args) => <DropdownMenuComp {...args} />;
 
 Dropdown.args = {
-  backgroundColor: '',
-  color: '',
+  backgroundColor: 'lightblue',
+  color: 'blue',
   func: () => console.warn('BUTTON CLICKED'),
+  itemColor: 'white',
 };

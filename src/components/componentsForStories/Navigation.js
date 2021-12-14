@@ -3,19 +3,23 @@ import PropTypes from 'prop-types';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export default function Navigation({
-  func, backgroundColor, color, border,
+  func, backgroundColor, color, width,
 }) {
+  const navStyle = {
+    width,
+  };
   const style = {
     backgroundColor,
     color,
-    border,
   };
   return (
     <div>
       <>
-        <Navbar style={style}>
+        <Navbar style={navStyle}>
           <Container style={style}>
-            <Navbar.Brand href="/">Navbar</Navbar.Brand>
+            <Navbar.Brand style={style} href="/">
+              Navbar
+            </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link style={style} href="/">
                 My Art
@@ -43,11 +47,11 @@ Navigation.propTypes = {
   func: PropTypes.func,
   backgroundColor: PropTypes.string,
   color: PropTypes.string,
-  border: PropTypes.string,
+  width: PropTypes.string,
 };
 Navigation.defaultProps = {
   func: () => console.warn('LOGOUT'),
   backgroundColor: '',
   color: '',
-  border: '',
+  width: '',
 };

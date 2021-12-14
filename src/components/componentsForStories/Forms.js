@@ -3,17 +3,26 @@ import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
 
 export default function Forms({
-  width, backgroundColor, border, color,
+  width,
+  backgroundColor,
+  border,
+  color,
+  margin,
 }) {
   const formStyle = {
     width,
     backgroundColor,
+    textAlign: 'center',
   };
   const formControlStyle = {
     border,
+    textAlign: 'center',
   };
   const labelStyle = {
     color,
+  };
+  const btnStyle = {
+    margin,
   };
   return (
     <Form style={formStyle}>
@@ -82,12 +91,14 @@ export default function Forms({
           name="inspoDescription"
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-      <Button variant="primary" type="button">
-        Add Another Inspo
-      </Button>
+      <div>
+        <Button style={btnStyle} variant="primary" type="submit">
+          Submit
+        </Button>
+        <Button style={btnStyle} variant="primary" type="button">
+          Add Another Inspo
+        </Button>
+      </div>
     </Form>
   );
 }
@@ -96,10 +107,12 @@ Forms.propTypes = {
   border: PropTypes.string,
   color: PropTypes.string,
   width: PropTypes.string,
+  margin: PropTypes.string,
 };
 Forms.defaultProps = {
   backgroundColor: '',
   border: '',
   color: '',
   width: '',
+  margin: '',
 };

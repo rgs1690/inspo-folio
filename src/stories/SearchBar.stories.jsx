@@ -10,7 +10,7 @@ export default {
 export const SearchBar = (args) => <SearchBarComp {...args} />;
 
 SearchBar.args = {
-  width: '100px',
+  width: '300px',
   border: 'solid 1px black',
   btnBackground: '',
   color: '',
