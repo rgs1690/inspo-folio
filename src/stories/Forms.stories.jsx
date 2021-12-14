@@ -10,8 +10,9 @@ export default {
 export const Form = (args) => <FormsComp {...args} />;
 
 Form.args = {
-  backgroundColor: '',
-  border: 'blue',
-  color: '',
-  width: '',
+  backgroundColor: 'lightblue',
+  border: '',
+  color: 'blue',
+  width: '600px',
+  margin: '5px',
 };

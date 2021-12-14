@@ -11,4 +11,6 @@ export const Title = (args) => <TitleComp {...args} />;
 
 Title.args = {
   text: 'THIS IS THE TITLE!',
+  fontSize: '',
+  fontFamily: 'monospace',
 };

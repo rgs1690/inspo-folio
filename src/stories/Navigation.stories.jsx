@@ -9,4 +9,8 @@ export default {
 // eslint-disable-next-line react/jsx-props-no-spreading
 export const NavBar = (args) => <NavigationComp {...args} />;
 
-NavBar.args = {};
+NavBar.args = {
+  backgroundColor: 'lightblue',
+  color: 'blue',
+  width: '550px',
+};

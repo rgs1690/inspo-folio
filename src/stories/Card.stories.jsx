@@ -13,4 +13,8 @@ Card.args = {
   titleLabel: 'THIS IS THE TITLE',
   cardText: 'CARD TEXT',
   cardImg: 'https://www.vangoghgallery.com/img/starry_night_full.jpg',
+  backgroundColor: '',
+  color: '',
+  size: 'md',
+  borderRadius: '10px',
 };

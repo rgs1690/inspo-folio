@@ -2,10 +2,18 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 
-export default function DropdownMenu({ func, backgroundColor, color }) {
+export default function DropdownMenu({
+  func,
+  backgroundColor,
+  color,
+  itemColor,
+}) {
   const style = {
     backgroundColor,
     color,
+  };
+  const itemStyle = {
+    color: itemColor,
   };
   return (
     <div>
@@ -15,13 +23,28 @@ export default function DropdownMenu({ func, backgroundColor, color }) {
         </Dropdown.Toggle>
 
         <Dropdown.Menu style={style}>
-          <Dropdown.Item href="#/action-1" type="button" onClick={func}>
+          <Dropdown.Item
+            style={itemStyle}
+            href="#/action-1"
+            type="button"
+            onClick={func}
+          >
             Sort by Title
           </Dropdown.Item>
-          <Dropdown.Item href="#/action-2" type="button" onClick={func}>
+          <Dropdown.Item
+            style={itemStyle}
+            href="#/action-2"
+            type="button"
+            onClick={func}
+          >
             Sort by Oldest
           </Dropdown.Item>
-          <Dropdown.Item href="#/action-3" type="button" onClick={func}>
+          <Dropdown.Item
+            style={itemStyle}
+            href="#/action-3"
+            type="button"
+            onClick={func}
+          >
             Sort by Newest
           </Dropdown.Item>
         </Dropdown.Menu>
@@ -33,9 +56,11 @@ DropdownMenu.propTypes = {
   func: PropTypes.func,
   backgroundColor: PropTypes.string,
   color: PropTypes.string,
+  itemColor: PropTypes.string,
 };
 DropdownMenu.defaultProps = {
   func: () => console.warn('BUTTON CLICKED'),
   backgroundColor: '',
   color: '',
+  itemColor: '',
 };

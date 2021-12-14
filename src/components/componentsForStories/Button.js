@@ -8,6 +8,7 @@ export default function Button({
   func,
   color,
   border,
+  borderRadius,
 }) {
   let scale = 1;
   if (size === 'sm') scale = 0.75;
@@ -17,6 +18,7 @@ export default function Button({
     padding: `${scale * 0.5}rem ${scale * 1}rem`,
     border,
     color,
+    borderRadius,
   };
 
   return (
@@ -34,6 +36,7 @@ Button.propTypes = {
   func: PropTypes.func,
   color: PropTypes.string,
   border: PropTypes.string,
+  borderRadius: PropTypes.string,
 };
 Button.defaultProps = {
   label: '',
@@ -42,4 +45,5 @@ Button.defaultProps = {
   func: () => console.warn('signOut'),
   color: '',
   border: '',
+  borderRadius: '5px',
 };
