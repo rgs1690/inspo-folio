@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getSingleInspo } from '../api/data/InspoData';
+import { getSingleInspo } from '../api/data/inspoData';
 import InspoForm from '../components/InspoForm';
 
 export default function EditInspoView() {

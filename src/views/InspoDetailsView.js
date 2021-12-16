@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import styled from 'styled-components';
-import { getSingleInspo } from '../api/data/InspoData';
+import { getSingleInspo } from '../api/data/inspoData';
 import { deleteMyWork, getSingleMyWork } from '../api/data/myWorkData';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 

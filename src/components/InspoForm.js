@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Form, Button } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
-import { createInspo, updateInspo } from '../api/data/InspoData';
+import { createInspo, updateInspo } from '../api/data/inspoData';
 
 const initialState = {
   artMedium: '',

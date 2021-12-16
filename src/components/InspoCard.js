@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
-import { deleteInspo } from '../api/data/InspoData';
+import { deleteInspo } from '../api/data/inspoData';
 
 export default function InspoCard({ inspo, setInspos }) {
   const currentUID = getCurrentUsersUid();
