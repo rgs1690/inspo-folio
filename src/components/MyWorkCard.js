@@ -10,11 +10,17 @@ export default function MyWorkCard({ myWork, setMyWorks }) {
   const handleClick = () => {
     deleteMyWork(myWork.firebaseKey, currentUID).then((newArray) => setMyWorks(newArray));
   };
+  const style = {
+    width: '18rem',
+    backgroundColor: '#A9CEF4',
+    textAlign: 'center',
+    border: '1px, solid, #597081',
+  };
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card className="cardBody" style={style}>
         <Card.Img variant="top" src={myWork.artUrl} />
-        <Card.Body>
+        <Card.Body className="cardBody">
           <Card.Title>{myWork.artTitle}</Card.Title>
           <Card.Text>
             {myWork.artMedium} <br />
