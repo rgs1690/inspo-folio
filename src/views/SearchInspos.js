@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
 import styled from 'styled-components';
-import { getAllInspos } from '../api/data/InspoData';
+import { getAllInspos } from '../api/data/inspoData';
 import InspoCard from '../components/InspoCard';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
