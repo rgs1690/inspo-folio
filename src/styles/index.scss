@@ -1,6 +1,8 @@
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import 'globals';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Neuton:wght@200&family=Sigmar+One&family=Teko:wght@300;400&display=swap');
 
 body {
   background-color: $favColor !important;
+  font-family:'Neuton', serif !important;
 }

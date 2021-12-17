@@ -17,19 +17,20 @@ const CardStyle = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 3em;
+    margin-top: 5em;
   }
   .ButtonDropFlex {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: right;
     margin-top: 1em;
   }
   Button {
-    margin-right: 3em;
+    margin-right: 1em;
   }
 `;
+
 export default function MyWorkView() {
   const currentUid = getCurrentUsersUid();
   const [myWorks, setMyWorks] = useState([]);
@@ -55,24 +56,32 @@ export default function MyWorkView() {
       orderMyWorkByNew(myWorks);
     }
   };
+  const btnStyle = {
+    backgroundColor: '#A9CEF4',
+    color: 'black',
+  };
+  const dropDownStyle = {
+    backgroundColor: '#A9CEF4',
+    color: 'black',
+  };
   return (
     <div>
       <CardStyle>
         <div className="ButtonDropFlex">
           <Button
+            style={btnStyle}
             type="button"
-            variant="secondary"
             size="lg"
             onClick={() => handleClick('add')}
           >
             ADD YOUR ART
           </Button>
           <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle style={dropDownStyle} id="dropdown-basic">
               Sort Artworks
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu style={dropDownStyle}>
               <Dropdown.Item
                 href="#/action-1"
                 type="button"
