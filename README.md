@@ -1,82 +1,53 @@
-# React Template
-[![Netlify Status](https://api.netlify.com/api/v1/badges/339c4ae9-fc7f-41b4-9b49-2dab0a20eaba/deploy-status)](https://app.netlify.com/sites/react-template-21/deploys)
+# Inspo-Folio  [![Netlify Status](https://api.netlify.com/api/v1/badges/fa003feb-c844-4b77-b864-abe4e3b8bea9/deploy-status)](https://app.netlify.com/sites/inspo-folio/deploys)
+Inspo-folio is a digital portfolio that allows artists to showcase their work side by side works of art that directly inspired them. This app sets to solve te problem of having a neat and organized system to store original works of art along side reference photos to help artists better articulate their work and connect with their audience. 
 
-[See Live Demo of this Template](https://react-template-21.netlify.app/)
 
-This template includes all the dependencies and set up needed for you to work within defined code standards and structure to get you up and running quickly.
+<img width="400" alt="Your Alt" src="https://dozitgaqgnfnfsxezhpg.supabase.in/storage/v1/object/public/capstone/homeImage.png">
 
-## Topics
-- [Get Started](#get-started)
-- [Starting the Project](#starting-the-project)
-- [Other important tidbits](#other-important-tidbits)
-    - [React Dev Tools](#react-dev-tools)
-    - [Using axios](#using-axios)
-    - [Deploying on Netlify](#deploying-on-netlify)
-___
-
+- [View deployed app](https://inspo-folio.netlify.app/)
 ## Get Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-![Use this Template](./documentation/usetemplate.png)
+````
+$ git clone git@github.com:rgs1690/inspo-folio.git
+$ cd inspo-folio
+````
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-![Create Project](./documentation/createproject.png)
+## About the User 
+- The ideal user for this application is a visual artist or a student of the visual arts. 
+- They want a visual way to help communicate what inspiried their choices in making their art. 
+- The problem this app solves for them is it allows them to display store and display thier original art and inspirations side by side digitally in a neat and organized platform. 
 
-3. Clone your new repo to your local machine
-4. Go to the **NEXT** section
+## Features 
+- User can add an object of their own art that includes an image and descriptive elements such as title and medium.
+- After adding their art, the user can then add artworks from other artists that inspired them that will be linked to that particular art piece. 
+- The user can view details of the art work which will show the art work adjacent to all the different works that inspired that piece. 
+- They can also view details of the inspirations which will display the original art along side that particalar "Inspo" along with a paragraph which the artist can describe how they were inspired.
+- The user can search through both thier art and inspirations by Title. 
+- The user can sort their art or inspirations alphabetically by title, date added for art or year completed for inspos. 
+- The user can delete and edit any artwork or inspiration. 
 
-## Starting the Project
-1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name
-1. Open the `/public/index.html` file and change the `title` attribute to the name of your application
-1. Rename the `.env.local.sample` file to `.env.local` file. The final file name should be `.env.local`
-1. From your command line, be in the root directory and run `npm install` OR `npm i` for short
-1. From your command line, be in the root directory and run `npx husky install`
-1. To start your application, run `npm start`
+## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
 
-### If you see this, you are set to go!
-![LIT](./documentation/lit-screen.png)
+## Technologies Used
+- React
+- Storybook
+- JavaScript
+- JSX
+- Styled-components
+- React-bootstrap
+- Firebase
+- Postman
 
-**NOTES:** 
-- Changes you make to the project will make the browser reload on save...no more hard refresh unless something goes wrong.
+## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+- [Check out the deployed site](https://inspo-folio.netlify.app/)
+- [Wireframes](https://www.figma.com/file/sEn9vS21HvavaJMPXBNz78/Inspo-Folio?node-id=0%3A1)
+- [Project Board](https://github.com/rgs1690/inspo-folio/projects/1)
+- [Deployed Storybook](https://www.chromatic.com/library?appId=61b80927ceb8de003a5cf5c4)
 
-## Other Important Tidbits
-### React Dev Tools
-From this time forward, you will be expected to have a clean console in order for your assignments to be approved. Use [React Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) to help with debugging.
-### Including Images with React
-If you have a folder of local images that you want to load into your code things get a little strange with webpack.  Remember the only way webpack knows about assets is if they are imported into your javascript files.  Even our CSS is not added until those files are imported into our javascript files.  Below is some sample code for how to load a local image file into your project
 
-```js
-import cat from './assets/cat.jpg';
+## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
+<img width="1148" alt="Your Alt" src="your-link.png">
 
-<>
-  <img src=${cat} alt="picture of a cat"/>
-</>
-
-```
-### Using Axios
-> For every file you will need to make an API request in, you will need to import Axios
-```js
-import axios from 'axios';
-
-const examplePromise = () => {
-  axios.get('http://localhost:3001/example')
-    .then((data) => {
-      console.warn(data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-});
-```
-
-### Deploying on Netlify
-
-- Build Command: `yarn build`
-- Publish directory: `build`
-- **Add Environmental Variables (NOT REQUIRED for Apps that do not use API Keys, etc)**
-    - Any Enviromental variables you are using in your `.env.local` file should be added to Netlify. 
-        - Go to Site settings > Build & deploy > Environment > Environment variables and the keys and values there.
-- **Update Firebase URL Settings**
-    - In Firebase under Authentication select sign in methods, scroll to Authorized domains. Add your Netlify URL.
-# Your own learning
-If you are interested in setting up your own project for things outside of class, you can run the command to start a React project `npx create-react-app {APP_NAME}` and setup all the files and structures from scratch.
+## Contributors
+Grace Sutherland
+- [Github Profile](https://github.com/rgs1690)
+- [Personal Site](https://grace-sutherland.netlify.app/)
