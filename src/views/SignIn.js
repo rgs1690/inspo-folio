@@ -9,8 +9,19 @@ const SignInStyle = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 40%;
     margin-top: 2em;
+  }
+  h1 {
+    color: #e5ecf0;
+    margin-top: 1em;
+  }
+  .btn {
+    background-color: #a9cef4;
+    width: 5em;
+    font-size: 3em;
+    color: #36494e;
+    border: 4px #e5ecf0 solid;
   }
 `;
 export default function SignIn({ user }) {
@@ -32,10 +43,10 @@ export default function SignIn({ user }) {
               alt="logo"
             />
             <div className="text-center mt-5">
-              <h1>Sign in to get started!</h1>
               <button type="button" className="btn" onClick={signInUser}>
                 Sign In
               </button>
+              <h1>Sign in to get started!</h1>
             </div>
           </>
         )}
