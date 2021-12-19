@@ -1,5 +1,5 @@
 # Inspo-Folio  [![Netlify Status](https://api.netlify.com/api/v1/badges/fa003feb-c844-4b77-b864-abe4e3b8bea9/deploy-status)](https://app.netlify.com/sites/inspo-folio/deploys)
-Inspo-folio is a digital portfolio that allows artists to showcase their work side by side works of art that directly inspired them. This app sets to solve te problem of having a neat and organized system to store original works of art along side reference photos to help artists better articulate their work and connect with their audience. 
+Inspo-folio is a digital portfolio that allows artists to showcase their work side by side works of art that directly inspired them. This app sets to solve the problem of having a neat and organized system to store original works of art along side reference photos to help artists better articulate their work and connect with their audience. 
 
 
 <img width="400" alt="Your Alt" src="https://dozitgaqgnfnfsxezhpg.supabase.in/storage/v1/object/public/capstone/homeImage.png">
