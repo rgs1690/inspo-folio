@@ -58,7 +58,7 @@ export default function MyWorkDetailsView() {
     width: '40rem',
     backgroundColor: '#A9CEF4',
     textAlign: 'center',
-    border: '1px, solid, #59708',
+    border: '2px, solid, #59708',
   };
   return (
     <>
