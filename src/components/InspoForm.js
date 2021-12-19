@@ -16,6 +16,13 @@ const initialState = {
   inspoDescription: '',
   inspoArtist: '',
 };
+const InspoFormStyle = styled.div`
+  h1 {
+    margin-top: 1em;
+    text-align: center;
+    color: #e5ecf0;
+  }
+`;
 export default function InspoForm({ obj = {} }) {
   const history = useHistory();
   const currentUid = getCurrentUsersUid();
@@ -94,13 +101,6 @@ export default function InspoForm({ obj = {} }) {
     border: '1px solid black',
     marginRight: '1em',
   };
-  const InspoFormStyle = styled.div`
-    h1 {
-      margin-top: 1em;
-      text-align: center;
-      color: #e5ecf0;
-    }
-  `;
   return (
     <div>
       <InspoFormStyle>

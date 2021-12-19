@@ -13,7 +13,13 @@ const initialState = {
   artUrl: '',
   uid: '',
 };
-
+const ArtFormStyle = styled.div`
+  h1 {
+    margin-top: 1em;
+    text-align: center;
+    color: #e5ecf0;
+  }
+`;
 export default function MyWorkForm({ obj = {} }) {
   const history = useHistory();
   const currentUid = getCurrentUsersUid();
@@ -77,13 +83,6 @@ export default function MyWorkForm({ obj = {} }) {
     backgroundColor: '#597081',
     border: '1px solid black',
   };
-  const ArtFormStyle = styled.div`
-    h1 {
-      margin-top: 1em;
-      text-align: center;
-      color: #e5ecf0;
-    }
-  `;
   return (
     <div>
       <ArtFormStyle>
