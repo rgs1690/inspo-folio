@@ -60,7 +60,7 @@ export default function InspoForm({ obj = {} }) {
         myWorkId: firebaseKey,
       }).then(() => {
         resetForm();
-        history.push('/inspos');
+        history.push('/');
       });
     }
   };
@@ -188,13 +188,17 @@ export default function InspoForm({ obj = {} }) {
           <Button style={btnStyle} type="submit">
             {obj.firebaseKey ? 'Update' : 'Submit'}
           </Button>
-          <Button
-            style={btnStyle}
-            type="button"
-            onClick={handleAddAnotherInspo}
-          >
-            Add Another Inspo
-          </Button>
+          {!obj.firebaseKey ? (
+            <Button
+              style={btnStyle}
+              type="button"
+              onClick={handleAddAnotherInspo}
+            >
+              Add Another Inspo
+            </Button>
+          ) : (
+            ''
+          )}
         </Form>
       </InspoFormStyle>
     </div>

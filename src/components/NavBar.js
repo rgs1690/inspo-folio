@@ -5,9 +5,10 @@ import { signOutUser } from '../api/auth';
 
 const NavBarStyle = styled.div`
   button {
-    margin-left: 25em;
+    backgroun-color: red;
     width: 5em;
     height: 3em;
+    margin-top: 0.5em;
   }
   .nav {
     display: flex;

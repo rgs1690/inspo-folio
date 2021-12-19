@@ -15,6 +15,7 @@ export default function MyWorkCard({ myWork, setMyWorks }) {
     backgroundColor: '#A9CEF4',
     textAlign: 'center',
     border: '1px, solid, #597081',
+    margin: '1em',
   };
   return (
     <div>

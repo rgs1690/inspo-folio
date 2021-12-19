@@ -8,18 +8,30 @@ import InspoCard from '../components/InspoCard';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
 const DetailsStyle = styled.div`
-display: relative;
 margin: 1em;
-.absoluteContainer {
-  position: absolute;
-  top: 5em;
-  left: 60em;
-}
+ .grid-container {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   margin-bottom: 5em;
+ };
+
 .flexContainer {
   display: inline-flex
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  text-align: center;
+};
+.myWorkCard {
+  text-align: center;
+}
+.inspoCard {
+  margin: 1em;
+}
+h1{
+  color: #E5ECF0;
+  margin: 2em;
+  text-decoration: underline;
+}
 `;
 export default function MyWorkDetailsView() {
   const [myWork, setMyWork] = useState({});
@@ -42,12 +54,19 @@ export default function MyWorkDetailsView() {
       isMounted = false;
     };
   }, []);
+  const myWorkStyle = {
+    width: '40rem',
+    backgroundColor: '#A9CEF4',
+    textAlign: 'center',
+    border: '1px, solid, #59708',
+  };
   return (
     <>
-      <div>
-        <DetailsStyle>
-          <div>
-            <Card style={{ width: '40rem' }}>
+      <DetailsStyle>
+        <div className="grid-container">
+          <div className="grid-item-1">
+            <h1>Your Art</h1>
+            <Card className="myWorkCard" style={myWorkStyle}>
               <Card.Img variant="top" src={myWork.artUrl} />
               <Card.Body>
                 <Card.Title>{myWork.artTitle}</Card.Title>
@@ -77,7 +96,8 @@ export default function MyWorkDetailsView() {
               </Card.Body>
             </Card>
           </div>
-          <div className="absoluteContainer">
+          <div className="grid-item-2">
+            <h1>Your Inspos</h1>
             <div className="flexContainer">
               {inspos.map((inspo) => (
                 <InspoCard
@@ -88,8 +108,8 @@ export default function MyWorkDetailsView() {
               ))}
             </div>
           </div>
-        </DetailsStyle>
-      </div>
+        </div>
+      </DetailsStyle>
     </>
   );
 }

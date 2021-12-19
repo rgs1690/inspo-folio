@@ -7,21 +7,31 @@ import { deleteMyWork, getSingleMyWork } from '../api/data/myWorkData';
 import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
 const DetailsStyle = styled.div`
-  display: relative;
   text-align: center;
-  .absoluteContainer {
-    position: absolute;
-    top: 5em;
-    left: 66em;
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 100px;
+    justfy-items: center;
+    align-items: center;
+    margin-top: 5em;
   }
-  .myWork {
-    margin-top: 2em;
+  .grid-container-2 {
+    align-items: center;
+  }
+
+  .grid-container-3 {
+    grid-column: 1/4;
+    marigin-top: 5em;
   }
 
   .card {
     width: 40em;
     margin-left: 2em;
   }
+
   .cardImage {
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,10 +39,12 @@ const DetailsStyle = styled.div`
   }
   .inspoDescrip {
     margin: 1em;
-    font-size: 5em;
+    font-size: 3em;
+    color: #e5ecf0;
   }
   h1 {
-    margin-top: 10em;
+    text-decoration: underline;
+    color: #e5ecf0;
   }
 `;
 export default function InspoDetailsView() {
@@ -57,14 +69,25 @@ export default function InspoDetailsView() {
   const handleClick = () => {
     deleteMyWork(myWork.firebaseKey, currentUid).then((newArray) => setMyWork(newArray));
   };
+  const inspoStyle = {
+    backgroundColor: '#597081',
+    textAlign: 'center',
+    border: '1px, solid, #A9CEF4',
+    color: '#A9CEF4',
+  };
+  const myWorkStyle = {
+    backgroundColor: '#A9CEF4',
+    textAlign: 'center',
+    border: '1px, solid, #597081',
+  };
   return (
     <DetailsStyle>
       <div>
-        <div className="cardContainer">
-          <div>
+        <div className="grid-container">
+          <div className="grid-container-1">
             <div className="myWork">
               {myWork ? (
-                <Card className="card">
+                <Card style={myWorkStyle}>
                   <Card.Img
                     className="cardImage"
                     variant="top"
@@ -103,9 +126,9 @@ export default function InspoDetailsView() {
             </div>
           </div>
 
-          <div>
-            <div className="absoluteContainer">
-              <Card className="card">
+          <div className="grid-container-2">
+            <div className="inspoCard">
+              <Card style={inspoStyle}>
                 <Card.Img
                   className="cardImage"
                   variant="top"
@@ -141,10 +164,8 @@ export default function InspoDetailsView() {
               </Card>
             </div>
           </div>
-          <div>
+          <div className="grid-container-3">
             <h1>Why I was inspired: </h1>
-          </div>
-          <div>
             <p className="inspoDescrip">{inspo.inspoDescription}</p>
           </div>
         </div>

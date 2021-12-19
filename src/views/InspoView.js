@@ -16,7 +16,7 @@ const InspoStyle = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 3em;
+    margin: 5em;
   }
   .dropStyle {
     display: block;
@@ -47,12 +47,17 @@ export default function InspoView() {
       orderInspoByNew(inspos);
     }
   };
+  const dropDownStyle = {
+    backgroundColor: '#A9CEF4',
+    color: 'black',
+    width: '10em',
+  };
   return (
     <InspoStyle>
       <div>
         <div className="dropStyle">
           <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+            <Dropdown.Toggle style={dropDownStyle} id="dropdown-basic">
               Sort Inspos
             </Dropdown.Toggle>
 
