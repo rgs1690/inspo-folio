@@ -45,7 +45,11 @@ $ cd inspo-folio
 
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
-<img width="1148" alt="Your Alt" src="your-link.png">
+<img width="1148" alt="Your Alt" src="https://dozitgaqgnfnfsxezhpg.supabase.in/storage/v1/object/public/capstone/screenshotHome.png">
+<img width="1148" alt="Your Alt" src="https://dozitgaqgnfnfsxezhpg.supabase.in/storage/v1/object/public/capstone/ScreenshotForm.png">
+<img width="1148" alt="Your Alt" src="https://dozitgaqgnfnfsxezhpg.supabase.in/storage/v1/object/public/capstone/ScreenshotInspoDetails.png">
+<img width="1148" alt="Your Alt" src="https://dozitgaqgnfnfsxezhpg.supabase.in/storage/v1/object/public/capstone/screenshotStorybook.png">
+
 
 ## Contributors
 Grace Sutherland
