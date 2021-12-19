@@ -7,11 +7,12 @@ import getCurrentUsersUid from '../helpers/getCurrentUserUID';
 
 const CardStyle = styled.div`
   .flexContainer {
+    margin-botttom: 5em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 3em;
+    margin: 5em;
   }
   .formStyle {
     display: block;
@@ -38,13 +39,31 @@ export default function SearchInspos() {
       if (isMounted) setInspos(inspoArray);
     });
   });
-
+  const inputStyle = {
+    width: '50em',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    textAlign: 'center',
+    backgroundColor: '#A9CEF4',
+    fontWeight: 'bold',
+    marginTop: '1em',
+    border: '1px solid black',
+  };
+  const btnStyle = {
+    backgroundColor: '#597081',
+    border: '1px solid black',
+    marginRight: '1em',
+    width: '6em',
+    height: '3em',
+    marginTop: '1em',
+  };
   return (
     <>
       <CardStyle>
         <div className="formStyle">
           <Form className="d-flex">
             <FormControl
+              style={inputStyle}
               type="text"
               placeholder="Search By Title"
               className="me-2"
@@ -53,7 +72,7 @@ export default function SearchInspos() {
                 setSearchItem(e.target.value);
               }}
             />
-            <Button variant="outline-success">Search</Button>
+            <Button style={btnStyle}>Search</Button>
           </Form>
         </div>
         <div className="flexContainer">

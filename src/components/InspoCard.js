@@ -10,9 +10,17 @@ export default function InspoCard({ inspo, setInspos }) {
   const handleClick = () => {
     deleteInspo(inspo.firebaseKey, currentUID).then((newArray) => setInspos(newArray));
   };
+  const cardStyle = {
+    width: '18rem',
+    backgroundColor: '#597081',
+    textAlign: 'center',
+    border: '1px, solid, #A9CEF4',
+    color: '#A9CEF4',
+    margin: '1em',
+  };
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={cardStyle}>
         <Card.Img variant="top" src={inspo.artUrl} />
         <Card.Body>
           <Card.Title>{inspo.inspoTitle}</Card.Title>

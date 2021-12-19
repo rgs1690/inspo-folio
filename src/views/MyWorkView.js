@@ -17,13 +17,13 @@ const CardStyle = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 5em;
+    margin: 5em;
   }
   .ButtonDropFlex {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: right;
+    justify-content: center;
     margin-top: 1em;
   }
   Button {
@@ -63,6 +63,7 @@ export default function MyWorkView() {
   const dropDownStyle = {
     backgroundColor: '#A9CEF4',
     color: 'black',
+    width: '10em',
   };
   return (
     <div>
