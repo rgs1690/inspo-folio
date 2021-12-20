@@ -20,7 +20,7 @@ $ cd inspo-folio
 - User can add an object of their own art that includes an image and descriptive elements such as title and medium.
 - After adding their art, the user can then add artworks from other artists that inspired them that will be linked to that particular art piece. 
 - The user can view details of the art work which will show the art work adjacent to all the different works that inspired that piece. 
-- They can also view details of the inspirations which will display the original art along side that particalar "Inspo" along with a paragraph which the artist can describe how they were inspired.
+- They can also view details of the inspirations which will display the original art along side that particular "Inspo" along with a paragraph which the artist can describe how they were inspired.
 - The user can search through both thier art and inspirations by Title. 
 - The user can sort their art or inspirations alphabetically by title, date added for art or year completed for inspos. 
 - The user can delete and edit any artwork or inspiration. 
