@@ -25,7 +25,8 @@ $ cd inspo-folio
 - The user can sort their art or inspirations alphabetically by title, date added for art or year completed for inspos. 
 - The user can delete and edit any artwork or inspiration. 
 
-## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
+## Video Walkthrough of INSPO-FOLIO
+- [Loom Video](https://www.loom.com/share/b2193e36428640db9d3c3ba968567577)
 
 ## Technologies Used
 - React
