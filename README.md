@@ -26,7 +26,7 @@ $ cd inspo-folio
 - The user can delete and edit any artwork or inspiration. 
 
 ## Video Walkthrough of INSPO-FOLIO
-- [Loom Video](https://www.loom.com/share/b2193e36428640db9d3c3ba968567577)
+- [Loom Video](https://www.loom.com/share/991535c0ad32452c8490d66f5ff68a0b)
 
 ## Technologies Used
 - React
