@@ -14,7 +14,7 @@ $ cd inspo-folio
 ## About the User 
 - The ideal user for this application is a visual artist or a student of the visual arts. 
 - They want a visual way to help communicate what inspiried their choices in making their art. 
-- The problem this app solves for them is it allows them to display store and display thier original art and inspirations side by side digitally in a neat and organized platform. 
+- The problem this app solves for them is it allows them to store and display thier original art and inspirations side by side digitally in a neat and organized platform. 
 
 ## Features 
 - User can add an object of their own art that includes an image and descriptive elements such as title and medium.
